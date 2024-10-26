@@ -1,14 +1,20 @@
-
-
-//ConsoleService.java
 package com.library.maven;
 
 import java.util.Scanner;
 
+/**
+ * Handles console input and output for library management.
+ */
 public class ConsoleService {
+  /** The LibraryService instance to manage books and readers. */
   private final LibraryService libraryService = new LibraryService();
+
+  /** Scanner for console input. */
   private final Scanner scanner = new Scanner(System.in);
 
+  /**
+   * Starts the console service for user interaction.
+   */
   public void run() {
     while (true) {
       System.out.println("\nChoose an option:");
@@ -36,13 +42,16 @@ public class ConsoleService {
     }
   }
 
+  /**
+   * Adds a new book to the library.
+   */
   private void addBook() {
     System.out.println("Enter book title:");
     String title = scanner.nextLine();
     Book book = libraryService.findBookByTitle(title);
 
     if (book == null) {
-      // If book does not exist, create it and add copies
+      // If the book does not exist, create it and add copies
       book = libraryService.addBook(title);
       System.out.println("Enter number of copies to add:");
       int numCopies = scanner.nextInt();
@@ -52,7 +61,7 @@ public class ConsoleService {
       }
       System.out.println("Book added successfully with " + numCopies + " copies.");
     } else {
-      // If book exists, ask for additional copies to add
+      // If the book exists, ask for additional copies to add
       System.out.println("Book already exists. Adding more copies.");
       System.out.println("Enter number of additional copies to add:");
       int additionalCopies = scanner.nextInt();
@@ -65,6 +74,9 @@ public class ConsoleService {
     }
   }
 
+  /**
+   * Adds a new reader to the library.
+   */
   private void addReader() {
     System.out.println("Enter reader's name:");
     String name = scanner.nextLine();
@@ -72,6 +84,9 @@ public class ConsoleService {
     System.out.println("Reader added successfully.");
   }
 
+  /**
+   * Allows a reader to rent a book.
+   */
   private void rentBook() {
     System.out.println("Enter reader's name:");
     String readerName = scanner.nextLine();
@@ -92,6 +107,9 @@ public class ConsoleService {
     }
   }
 
+  /**
+   * Displays all available books in the library.
+   */
   private void showBooks() {
     System.out.println("Available Books:");
     for (Book book : libraryService.getBooks()) {
@@ -100,6 +118,9 @@ public class ConsoleService {
     }
   }
 
+  /**
+   * Displays all readers in the library.
+   */
   private void showReaders() {
     System.out.println("Readers:");
     for (Reader reader : libraryService.getReaders()) {
@@ -107,4 +128,7 @@ public class ConsoleService {
           reader.getName(), reader.getRentedBooks().size());
     }
   }
+
+  // GRASP: Controller - ConsoleService manages user
+  // interactions and delegates tasks to the LibraryService.
 }
