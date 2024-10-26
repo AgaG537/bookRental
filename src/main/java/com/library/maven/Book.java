@@ -5,25 +5,29 @@ import java.util.List;
 
 /**
  * Represents a book in the library.
+ * <p>
+ * GRASP: Information Expert - Book knows its own copies and manages availability details.
  */
 public class Book {
   /** The title of the book. */
   private String title;
 
-  /** The list of copies of the book. */
+  /** The list of copies of this book. */
   private List<BookCopy> copies = new ArrayList<>();
 
   /**
-   * Constructs a Book object.
+   * Constructs a new Book with the specified title.
    *
-   * @param title The title of the book
+   * @param title the title of the book
    */
   public Book(String title) {
     this.title = title;
   }
 
   /**
-   * Adds a copy of the book to the list of copies.
+   * Adds a copy to the book's collection of copies.
+   * <p>
+   * GRASP: High Cohesion - Book focuses solely on managing its copies and their status.
    *
    * @param bookCopy The copy of the book to be added
    */
@@ -32,7 +36,9 @@ public class Book {
   }
 
   /**
-   * Returns the available copies of the book.
+   * Returns the list of available copies of the book.
+   * <p>
+   * GRASP: Information Expert - Book determines which copies are available.
    *
    * @return A list of available copies of the book
    */
@@ -56,22 +62,20 @@ public class Book {
   }
 
   /**
-   * Returns the total number of copies of the book.
+   * Returns the total number of copies of this book.
    *
-   * @return Total number of copies
+   * @return The total number of copies
    */
   public int getTotalCopies() {
     return copies.size();
   }
 
   /**
-   * Returns the number of available copies of the book.
+   * Returns the number of available copies of this book.
    *
-   * @return Number of available copies
+   * @return The number of available copies
    */
   public int getAvailableCopiesCount() {
     return getAvailableCopies().size();
   }
-
-  // GRASP: Creator - The Book class is responsible for creating and managing its copies.
 }

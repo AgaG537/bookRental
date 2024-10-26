@@ -7,11 +7,11 @@ public class BookCopy {
   /** Unique identifier for the book copy. */
   private final int copyId;
 
-  /** Indicates whether the copy is rented. */
+  /** Indicates whether the copy is currently rented. */
   private boolean isRented;
 
   /**
-   * Constructs a BookCopy object.
+   * Constructs a new BookCopy with the specified copy ID.
    *
    * @param copyId Unique identifier for the copy
    */
@@ -41,12 +41,9 @@ public class BookCopy {
   /**
    * Returns the unique identifier for the copy.
    *
-   * @return Unique identifier for the copy
+   * @return The unique identifier for the copy
    */
   public int getCopyId() {
     return copyId;
   }
-
-  // GRASP: Information Expert - The BookCopy class has the
-  // information necessary to manage its own rented state.
 }

@@ -4,19 +4,21 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Represents a reader in the library.
+ * Represents a library member who can rent books.
+ * <p>
+ * GRASP: Information Expert - Reader knows and manages the books they have rented.
  */
 public class Reader {
   /** The name of the reader. */
   private String name;
 
-  /** The list of rented books. */
-  private List<Book> rentedBooks = new ArrayList<>();
+  /** The list of rentals associated with the reader. */
+  private List<Rental> rentals = new ArrayList<>();
 
   /**
-   * Constructs a Reader object.
+   * Constructs a new Reader with the specified name.
    *
-   * @param name The name of the reader
+   * @param name the name of the reader
    */
   public Reader(String name) {
     this.name = name;
@@ -32,23 +34,22 @@ public class Reader {
   }
 
   /**
-   * Adds a book to the list of rented books.
+   * Adds a rental to the reader's list of rentals.
+   * <p>
+   * GRASP: Information Expert - Reader manages and tracks its own rentals.
    *
-   * @param book The book to be rented
+   * @param rental The rental to be added
    */
-  public void rentBook(Book book) {
-    rentedBooks.add(book);
+  public void addRental(Rental rental) {
+    rentals.add(rental);
   }
 
   /**
-   * Returns the list of rented books.
+   * Returns the list of rentals for this reader.
    *
-   * @return A list of rented books
+   * @return A list of rentals associated with the reader
    */
-  public List<Book> getRentedBooks() {
-    return rentedBooks;
+  public List<Rental> getRentals() {
+    return rentals;
   }
-
-  // GRASP: Low Coupling - Reader class maintains its own
-  // rented books without tightly coupling with other classes.
 }
