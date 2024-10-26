@@ -2,9 +2,11 @@ package com.library.maven;
 
 /**
  * The main entry point for the library management system.
+ *
  * <p>
  * This class initializes and starts the console-based library system by
  * creating an instance of `ConsoleService` and invoking its `run` method.
+ *
  * <p>
  * GRASP: Pure Fabrication - Main acts as a fabricated entry point to separate
  * initialization logic from business logic, keeping it cohesive and maintainable.

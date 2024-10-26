@@ -5,15 +5,16 @@ import java.util.List;
 
 /**
  * Represents a library member who can rent books.
+ *
  * <p>
  * GRASP: Information Expert - Reader knows and manages the books they have rented.
  */
 public class Reader {
   /** The name of the reader. */
-  private String name;
+  private final String name;
 
   /** The list of rentals associated with the reader. */
-  private List<Rental> rentals = new ArrayList<>();
+  private final List<Rental> rentals = new ArrayList<>();
 
   /**
    * Constructs a new Reader with the specified name.
@@ -35,6 +36,7 @@ public class Reader {
 
   /**
    * Adds a rental to the reader's list of rentals.
+   *
    * <p>
    * GRASP: Information Expert - Reader manages and tracks its own rentals.
    *

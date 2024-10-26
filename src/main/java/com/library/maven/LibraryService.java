@@ -5,20 +5,24 @@ import java.util.List;
 
 /**
  * Manages core business logic for the library system.
+ *
  * <p>
- * GRASP: Controller - LibraryService orchestrates the main operations, such as adding books, managing readers, and handling rentals.
+ * GRASP: Controller - LibraryService orchestrates the main operations,
+ * such as adding books, managing readers, and handling rentals.
  */
 public class LibraryService {
   /** The list of books in the library. */
-  private List<Book> books = new ArrayList<>();
+  private final List<Book> books = new ArrayList<>();
 
   /** The list of readers in the library. */
-  private List<Reader> readers = new ArrayList<>();
+  private final List<Reader> readers = new ArrayList<>();
 
   /**
    * Adds a new book to the library system.
+   *
    * <p>
-   * GRASP: Information Expert - LibraryService maintains the collection of books in the library.
+   * GRASP: Information Expert - LibraryService maintains
+   * the collection of books in the library.
    *
    * @param title The title of the book
    * @return The created Book object
@@ -31,8 +35,10 @@ public class LibraryService {
 
   /**
    * Adds a copy to a specific book in the library.
+   *
    * <p>
-   * GRASP: Low Coupling - LibraryService interacts with books at a high level, leaving copy management to the Book class.
+   * GRASP: Low Coupling - LibraryService interacts with books
+   * at a high level, leaving copy management to the Book class.
    *
    * @param book The book to which the copy will be added
    * @param copyId Unique identifier for the new copy
@@ -43,22 +49,23 @@ public class LibraryService {
 
   /**
    * Adds a new reader to the library.
+   *
    * <p>
    * GRASP: Creator - LibraryService is responsible for creating and managing Reader instances.
    *
    * @param name The name of the reader
-   * @return The created Reader object
    */
-  public Reader addReader(String name) {
+  public void addReader(String name) {
     Reader reader = new Reader(name);
     readers.add(reader);
-    return reader;
   }
 
   /**
    * Rents a book copy to a reader, creating a rental record.
+   *
    * <p>
-   * GRASP: Controller - LibraryService coordinates the rental process, creating a Rental and updating the Reader and BookCopy statuses.
+   * GRASP: Controller - LibraryService coordinates the rental process,
+   * creating a Rental and updating the Reader and BookCopy statuses.
    *
    * @param reader The reader renting the book
    * @param title The title of the book to rent
@@ -78,8 +85,10 @@ public class LibraryService {
 
   /**
    * Finds a book by its title in the library.
+   *
    * <p>
-   * GRASP: Information Expert - LibraryService manages the collection of books and can search by title.
+   * GRASP: Information Expert - LibraryService manages the
+   * collection of books and can search by title.
    *
    * @param title The title of the book
    * @return The found Book object, or null if not found
@@ -95,8 +104,10 @@ public class LibraryService {
 
   /**
    * Finds a reader by their name in the library.
+   *
    * <p>
-   * GRASP: Information Expert - LibraryService manages the collection of readers and can search by name.
+   * GRASP: Information Expert - LibraryService manages
+   * the collection of readers and can search by name.
    *
    * @param name The name of the reader
    * @return The found Reader object, or null if not found

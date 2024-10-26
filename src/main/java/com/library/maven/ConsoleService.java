@@ -1,10 +1,10 @@
 package com.library.maven;
 
-import java.util.Objects;
 import java.util.Scanner;
 
 /**
  * ConsoleService: Handles console input and output for library management.
+ *
  * <p>
  * GRASP: Controller - Manages user interactions and invokes appropriate methods in LibraryService.
  */
@@ -95,11 +95,9 @@ public class ConsoleService {
   private void rentBook() {
     if (libraryService.getReaders().isEmpty()) {
       System.out.println("No readers in the system.");
-    }
-    else if (libraryService.getBooks().isEmpty()) {
+    } else if (libraryService.getBooks().isEmpty()) {
       System.out.println("No books in the system.");
-    }
-    else {
+    } else {
       System.out.println("Enter reader's name:");
       String readerName = scanner.nextLine();
       Reader reader = libraryService.findReaderByName(readerName);
@@ -126,8 +124,7 @@ public class ConsoleService {
   private void showBooks() {
     if (libraryService.getBooks().isEmpty()) {
       System.out.println("No books in the system.");
-    }
-    else {
+    } else {
       System.out.println("Available Books:");
       for (Book book : libraryService.getBooks()) {
         System.out.printf("Title: %s, Total Copies: %d, Available Copies: %d%n",
@@ -142,8 +139,7 @@ public class ConsoleService {
   private void showReaders() {
     if (libraryService.getReaders().isEmpty()) {
       System.out.println("No readers in the system.");
-    }
-    else {
+    } else {
       System.out.println("Readers:");
       for (Reader reader : libraryService.getReaders()) {
         System.out.printf("Name: %s, Books Rented: %d%n",

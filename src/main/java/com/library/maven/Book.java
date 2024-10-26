@@ -5,15 +5,16 @@ import java.util.List;
 
 /**
  * Represents a book in the library.
+ *
  * <p>
  * GRASP: Information Expert - Book knows its own copies and manages availability details.
  */
 public class Book {
   /** The title of the book. */
-  private String title;
+  private final String title;
 
   /** The list of copies of this book. */
-  private List<BookCopy> copies = new ArrayList<>();
+  private final List<BookCopy> copies = new ArrayList<>();
 
   /**
    * Constructs a new Book with the specified title.
@@ -26,6 +27,7 @@ public class Book {
 
   /**
    * Adds a copy to the book's collection of copies.
+   *
    * <p>
    * GRASP: High Cohesion - Book focuses solely on managing its copies and their status.
    *
@@ -37,6 +39,7 @@ public class Book {
 
   /**
    * Returns the list of available copies of the book.
+   *
    * <p>
    * GRASP: Information Expert - Book determines which copies are available.
    *

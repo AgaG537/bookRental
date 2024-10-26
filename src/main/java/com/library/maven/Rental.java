@@ -2,15 +2,16 @@ package com.library.maven;
 
 /**
  * Represents a rental transaction for a specific book copy.
+ *
  * <p>
  * GRASP: Information Expert - Rental manages details of the rented book and its specific copy.
  */
 public class Rental {
   /** The book involved in the rental. */
-  private Book book;
+  private final Book book;
 
   /** The specific copy of the book being rented. */
-  private BookCopy bookCopy;
+  private final BookCopy bookCopy;
 
   /**
    * Constructs a new Rental for the specified book and book copy.
