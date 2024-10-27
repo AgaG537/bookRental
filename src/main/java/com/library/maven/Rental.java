@@ -5,6 +5,7 @@ package com.library.maven;
  *
  * <p>
  * GRASP: Information Expert - Rental manages details of the rented book and its specific copy.
+ * </p>
  */
 public class Rental {
   /** The book involved in the rental. */

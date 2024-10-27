@@ -6,7 +6,9 @@ import java.util.Scanner;
  * ConsoleService: Handles console input and output for library management.
  *
  * <p>
- * GRASP: Controller - Manages user interactions and invokes appropriate methods in LibraryService.
+ * GRASP: Controller - Manages user interactions and
+ * invokes appropriate methods in LibraryService.
+ * </p>
  */
 public class ConsoleService {
   /** The LibraryService instance to manage books and readers. */

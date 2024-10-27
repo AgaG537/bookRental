@@ -9,6 +9,7 @@ import java.util.List;
  * <p>
  * GRASP: Controller - LibraryService orchestrates the main operations,
  * such as adding books, managing readers, and handling rentals.
+ * </p>
  */
 public class LibraryService {
   /** The list of books in the library. */
@@ -23,6 +24,7 @@ public class LibraryService {
    * <p>
    * GRASP: Information Expert - LibraryService maintains
    * the collection of books in the library.
+   * </p>
    *
    * @param title The title of the book
    * @return The created Book object
@@ -39,6 +41,7 @@ public class LibraryService {
    * <p>
    * GRASP: Low Coupling - LibraryService interacts with books
    * at a high level, leaving copy management to the Book class.
+   * </p>
    *
    * @param book The book to which the copy will be added
    * @param copyId Unique identifier for the new copy
@@ -51,7 +54,9 @@ public class LibraryService {
    * Adds a new reader to the library.
    *
    * <p>
-   * GRASP: Creator - LibraryService is responsible for creating and managing Reader instances.
+   * GRASP: Creator - LibraryService is responsible
+   * for creating and managing Reader instances.
+   * </p>
    *
    * @param name The name of the reader
    */
@@ -66,6 +71,7 @@ public class LibraryService {
    * <p>
    * GRASP: Controller - LibraryService coordinates the rental process,
    * creating a Rental and updating the Reader and BookCopy statuses.
+   * </p>
    *
    * @param reader The reader renting the book
    * @param title The title of the book to rent
@@ -89,6 +95,7 @@ public class LibraryService {
    * <p>
    * GRASP: Information Expert - LibraryService manages the
    * collection of books and can search by title.
+   * </p>
    *
    * @param title The title of the book
    * @return The found Book object, or null if not found
@@ -108,6 +115,7 @@ public class LibraryService {
    * <p>
    * GRASP: Information Expert - LibraryService manages
    * the collection of readers and can search by name.
+   * </p>
    *
    * @param name The name of the reader
    * @return The found Reader object, or null if not found

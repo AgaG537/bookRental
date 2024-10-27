@@ -7,7 +7,9 @@ import java.util.List;
  * Represents a book in the library.
  *
  * <p>
- * GRASP: Information Expert - Book knows its own copies and manages availability details.
+ * GRASP: Information Expert - Book knows its
+ * own copies and manages availability details.
+ * </p>
  */
 public class Book {
   /** The title of the book. */
@@ -29,7 +31,9 @@ public class Book {
    * Adds a copy to the book's collection of copies.
    *
    * <p>
-   * GRASP: High Cohesion - Book focuses solely on managing its copies and their status.
+   * GRASP: High Cohesion - Book focuses solely
+   * on managing its copies and their status.
+   * </p>
    *
    * @param bookCopy The copy of the book to be added
    */
@@ -41,7 +45,9 @@ public class Book {
    * Returns the list of available copies of the book.
    *
    * <p>
-   * GRASP: Information Expert - Book determines which copies are available.
+   * GRASP: Information Expert - Book determines
+   * which copies are available.
+   * </p>
    *
    * @return A list of available copies of the book
    */

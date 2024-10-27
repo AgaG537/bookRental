@@ -8,6 +8,7 @@ import java.util.List;
  *
  * <p>
  * GRASP: Information Expert - Reader knows and manages the books they have rented.
+ * </p>
  */
 public class Reader {
   /** The name of the reader. */
@@ -39,6 +40,7 @@ public class Reader {
    *
    * <p>
    * GRASP: Information Expert - Reader manages and tracks its own rentals.
+   * </p>
    *
    * @param rental The rental to be added
    */
